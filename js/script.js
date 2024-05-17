@@ -4,6 +4,7 @@ const linkForm = document.getElementById('link-form');
 const errMsg = document.getElementById('error');
 const btn = document.getElementById('btn');
 const menu = document.getElementById('menu');
+const lg = document.getElementById('closeLG');
 
 
 
@@ -11,6 +12,7 @@ const menu = document.getElementById('menu');
 
 btn.addEventListener('click', navToggle);
 
+lg.addEventListener('click', navToggle);
 
 
 // Toggle Mobile Menu
