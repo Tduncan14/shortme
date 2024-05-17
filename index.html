@@ -45,7 +45,8 @@
       background: white;
     }
 
-    .circlebox {
+    .circlebox,
+    .bg-darkViolet {
       background: hsl(260, 8%, 14%);
     }
 
@@ -77,6 +78,55 @@
       color: hsl(257, 7%, 63%);
 
     }
+
+    /* hamburger */
+
+    .hamburger {
+      cursor: pointer;
+      width: 24px;
+      height: 24px;
+      transition: all 0.25s;
+      position: relative;
+    }
+
+    .hamburger-top,
+    .hamburger-middle,
+    .hamburger-bottom {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 3px;
+      top: 0;
+      left: 0;
+      background: #9c9aa6;
+      transform: rotate(0);
+      transition: all 0.5s;
+    }
+
+    .hamburger-middle {
+      transform: translateY(7px);
+    }
+
+    .hamburger-bottom {
+      transform: translateY(14px);
+    }
+
+    .open {
+      transform: rotate(90deg);
+      transform: translateY(0px);
+    }
+
+    .open .hamburger-top {
+      transform: rotate(45deg) translateY(6px) translateX(6px);
+    }
+
+    .open .hamburger-middle {
+      display: none;
+    }
+
+    .open .hamburger-bottom {
+      transform: rotate(-45deg) translateY(6px) translateX(-6px);
+    }
   </style>
 </head>
 
@@ -101,6 +151,29 @@
         <div class="hover:text-violet-700">Login</div>
         <a href="" class="px-8 py-3 font-bold text-black bg-cyan-500 rounded-full hover:opacity-70">Sign up</a>
       </div>
+
+      <!-- Hamburger button -->
+
+      <!-- Hamburger Button -->
+      <button id="btn" class="block hamburger lg:hidden focus:outline-none" type="button">
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="menu" class="absolute hidden p-6 rounded-lg bg-darkViolet left-6 right-6 top-20 z-100">
+      <div class="flex flex-col items-center justify-center w-full space-y-6 font-bold text-white rounded-sm">
+        <a href="#" class="w-full text-center">Features</a>
+        <a href="#" class="w-full text-center">Pricing</a>
+        <a href="#" class="w-full text-center">Resources</a>
+        <a href="#" class="w-full pt-6 border-t border-gray-400 text-center">Login</a>
+        <a href="#" class="w-full py-3 text-center rounded-full bg-cyan">Sign Up</a>
+      </div>
+    </div>
+
+
     </div>
   </nav>
   <!-- hero section -->
